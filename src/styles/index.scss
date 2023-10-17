@@ -69,14 +69,24 @@ body {
         border-radius: 25px;
         border: none;
         background-color: rgb(8, 24, 39);
-        padding: 5px 40px;
+        padding: 5px 10px 5px 35px;
         caret-color: white;
+        width: 170px;
+
+        transition: width 1s ease-out;
         &::placeholder{
           color: rgba(255, 255, 255, 0.192);
           font-size: 0.9rem;
+          padding: 0px 5px;
         }
         &:focus {
           outline: none;
+        }
+        &:hover {
+          width: 220px;
+        }
+        &:focus {
+          width: 220px;
         }
       }
       svg {
@@ -131,17 +141,28 @@ body {
         }
         button {
           border-radius: 25px;
+          background-color: white;
           margin: 20px;
-          padding: 5px 20px;
+          padding: 3px 18px;
           border: none;
-          font-size: 0.8rem;
-          font-weight: 600;
+          font-weight: 800;
           cursor: pointer;
 
           position: absolute;
           bottom: 0;
           right: 0;
           z-index: 5;
+
+          transition: all 0.3s ease-in-out;
+          p {
+            color: rgb(31, 31, 31);
+            font-size: 0.7rem;
+            transform: translateY(1px);
+
+          }
+          &:hover {
+            padding: 3px 25px;
+          }
         }
         .day-night-bg {
           height: 100%;
@@ -306,6 +327,7 @@ body {
         }
         div {
           border: 1px solid rgb(196, 196, 196);
+          border-radius: 25px;
           height: 1px;
           flex: 1;
           width: 100%;
@@ -418,11 +440,17 @@ body {
 
       grid-column: 2 / 5;
       .button-container {
-        margin: 20px;
+        margin: 20px 30px;
 
         display: flex;
         align-items: center;
         gap: 10px;
+        h1 {
+          color: rgb(68, 68, 68);
+          font-size: 0.7rem;
+          font-weight: 800;
+          letter-spacing: 3px;
+        }
         button {
           padding: 5px 15px;
           background-color: white;
@@ -434,7 +462,8 @@ body {
           cursor: pointer;
         }
         div {
-          border: 1px solid rgb(196, 196, 196);
+          border: 1px solid rgb(153, 153, 153);
+          border-radius: 25px;
           height: 1px;
           flex: 1;
           width: 100%;
@@ -453,7 +482,7 @@ body {
           list-style: none;
           color: white;
           background-color: var(--secondary-theme);
-          border-radius: 15px;
+          border-radius: 5px;
           h1 {
             font-size: 1.2rem;
             font-weight: 700;
@@ -478,7 +507,6 @@ body {
       }
       #heart {
         width: 240px;
-
         transform: rotate(-4deg);
 
         position: absolute;
