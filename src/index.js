@@ -64,4 +64,4 @@ function parseDay(day) {
 }
 
 getWeather("manila");
-showTime();
+// showTime();

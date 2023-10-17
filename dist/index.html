@@ -3,10 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather</title>
+    <title>weather.io | Your Weather Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="main.js" defer></script>
   </head>
   <body>
-    <h1>Test</h1>
+    <header>
+      <div class="search">
+        <input type="search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span></span>
+      </div>
+      <div class="title">
+        <h1>weather.io</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-dim"><circle cx="12" cy="12" r="4"/><path d="M12 4h.01"/><path d="M20 12h.01"/><path d="M12 20h.01"/><path d="M4 12h.01"/><path d="M17.657 6.343h.01"/><path d="M17.657 17.657h.01"/><path d="M6.343 17.657h.01"/><path d="M6.343 6.343h.01"/></svg>
+      </div>
+    </header>
+    <main>
+      <section class="one">
+        <div class="image-container">
+          <h1>31 °C</h1>
+          <button type="button">DISPLAY °F</button>
+          <img class="day-night-bg" src="assets/day.png" alt="Image of day or night">
+        </div>
+        <div class="primary-info">
+          <div class="primary-info-split-one">
+            <div>
+              <h1>Manila</h1>
+              <h2>Overcast Clouds</h2>
+            </div>
+            <img class="weather-icon" src="/assets/cloudy.svg" alt="Icon of current weather">
+          </div>
+
+          <div class="primary-info-split-two">
+            <div>
+              <p>HIGH 32 °C</p>
+              <p>LOW 29 °C</p>
+            </div>
+            <h3>17th Oct '23</h3>
+          </div>
+        </div>
+      </section>
+      <section class="two"></section>
+      <section class="three"></section>
+      <section class="four"></section>
+    </main>
   </body>
 </html>
