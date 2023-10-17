@@ -125,7 +125,7 @@ body {
         }
         button {
           border-radius: 25px;
-          margin: 30px;
+          margin: 20px;
           padding: 5px 20px;
           border: none;
           font-size: 0.8rem;
@@ -147,7 +147,8 @@ body {
       }
       .primary-info {
         padding: 18px;
-        background: white;
+        background: #5145ff;
+        color: white;
         height: 40%;
         border-radius: 0px 0px 30px 30px;
 
@@ -170,8 +171,9 @@ body {
           img {
             justify-self: center;
             align-self: center;
-            height: 40px;
-            width: 40px;
+            height: 55px;
+            width: 55px;
+            filter: invert(1);
           }
         }
         &-split-two {
@@ -179,17 +181,36 @@ body {
 
           display: flex;
           justify-content: space-between;
-          div {
+          align-items: end;
+          .container-extra-info {
             align-self: end;
             p {
-              font-size: 0.8rem;
+              font-size: 0.6rem;
               font-weight: bold;
+              margin-bottom: 5px;
+              span {
+                display: block;
+                font-size: 1.1rem;
+                line-height: 1.2rem;
+              }
             }
           }
-          h3 {
-            font-size: 1rem;
-            align-self: end;
+          .container-title {
+            height: 30px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            h3 {
+              font-size: 0.8rem;
+              font-weight: 600;
+              background: white;
+              padding: 0px 10px;
+              border-radius: 25px;
+              color: #5145ff;
+            }
           }
+
         }
       }
     }
@@ -226,7 +247,6 @@ body {
           }
         }
         &-split-two {
-          // background-color: #010038;
           border-radius: 100px;
 
           display: flex;
@@ -249,7 +269,7 @@ body {
       }
     }
     .three {
-      background-color: rgb(255, 255, 255);
+      background-color: #5145ff;
       padding: 15px;
       width: 100%;
 
@@ -260,16 +280,17 @@ body {
       grid-column: 3 / 5;
       &-header {
         width: 100%;
+        margin-left: 3px;
 
         display: flex;
         align-items: center;
         gap: 15px;
         h1 {
-          color: white;
+          color: #5145ff;
           font-size: 1.2rem;
           letter-spacing: 2px;
           font-weight: 700;
-          background-color: #5145ff;
+          background-color: white;
           border-radius: 25px;
           padding: 4px 30px;
           margin: 5px 0px;
@@ -291,23 +312,24 @@ body {
         align-content: center;
         grid-template-columns: 1fr 1fr;
         row-gap: 25px;
+        column-gap: 25px;
         .feels-like {
           display: flex;
 
           gap: 3px;
           svg {
-            fill: #010038;
+            fill: white;
             width: 25px;
             align-self: start;
           }
           &-details {
             h1 {
-              color: #010038;
-              font-size: 0.6rem;
+              color: white;
+              font-size: 0.7rem;
               font-weight: bold;
             }
             h2 {
-              color: #010038;
+              color: white;
               font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
@@ -318,18 +340,18 @@ body {
           display: flex;
           gap: 3px;
           svg {
-            fill: #010038;
+            fill: white;
             width: 29px;
             align-self: start;
           }
           &-details {
             h1 {
-              color: #010038;
-              font-size: 0.6rem;
+              color: white;
+              font-size: 0.7rem;
               font-weight: bold;
             }
             h2 {
-              color: #010038;
+              color: white;
               font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
@@ -340,18 +362,18 @@ body {
           display: flex;
           gap: 3px;
           svg {
-            fill: #010038;
+            fill: white;
             width: 29px;
             align-self: start;
           }
           &-details {
             h1 {
-              color: #010038;
-              font-size: 0.6rem;
+              color: white;
+              font-size: 0.7rem;
               font-weight: bold;
             }
             h2 {
-              color: #010038;
+              color: white;
               font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
@@ -362,18 +384,18 @@ body {
           display: flex;
           gap: 3px;
           svg {
-            fill: #010038;
+            fill: white;
             width: 29px;
             align-self: start;
           }
           &-details {
             h1 {
-              color: #010038;
-              font-size: 0.6rem;
+              color: white;
+              font-size: 0.7rem;
               font-weight: bold;
             }
             h2 {
-              color: #010038;
+              color: white;
               font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
@@ -383,9 +405,25 @@ body {
       }
     }
     .four {
-      background-color: #5145ff;
+      background-color: white;
+
+      position: relative;
+
       grid-column: 2 / 5;
-      
+      ul {
+        li {
+
+        }
+      }
+      #heart {
+        width: 200px;
+
+        transform: rotate(-4deg);
+
+        position: absolute;
+        bottom: -25px;
+        right: -5px;
+      }
     }
   }
 }
