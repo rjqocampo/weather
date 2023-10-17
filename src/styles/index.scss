@@ -249,9 +249,122 @@ body {
       }
     }
     .three {
-      background-color: white;
-      grid-column: 3 / 5;
+      background-color: rgb(255, 255, 255);
+      padding: 15px;
+      width: 100%;
 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      grid-column: 3 / 5;
+      &-header {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        background-color: #441bff;
+        border-radius: 25px;
+        padding: 5px 25px;
+        margin: 5px 0px;
+        width: max-content;
+      }
+      .grid {
+      height: calc(100% - 40px);
+      width: 100%;
+      display: grid;
+      align-content: center;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 25px;
+        .feels-like {
+          display: flex;
+
+          gap: 3px;
+          svg {
+            fill: #010038;
+            width: 35px;
+            align-self: start;
+          }
+          &-details {
+            h1 {
+              color: #010038;
+              font-size: 0.6rem;
+              font-weight: bold;
+            }
+            h2 {
+              color: #010038;
+              font-size: 1.8rem;
+              font-weight: bold;
+              line-height: 2rem;
+            }
+          }
+        }
+        .humidity {
+          display: flex;
+          gap: 3px;
+          svg {
+            fill: #010038;
+            width: 39px;
+            align-self: start;
+          }
+          &-details {
+            h1 {
+              color: #010038;
+              font-size: 0.6rem;
+              font-weight: bold;
+            }
+            h2 {
+              color: #010038;
+              font-size: 1.8rem;
+              font-weight: bold;
+              line-height: 2rem;
+            }
+          }
+        }
+        .chance-of-rain {
+          display: flex;
+          gap: 3px;
+          svg {
+            fill: #010038;
+            width: 39px;
+            align-self: start;
+          }
+          &-details {
+            h1 {
+              color: #010038;
+              font-size: 0.6rem;
+              font-weight: bold;
+            }
+            h2 {
+              color: #010038;
+              font-size: 1.8rem;
+              font-weight: bold;
+              line-height: 2rem;
+            }
+          }
+        }
+        .wind-speed {
+          display: flex;
+          gap: 3px;
+          svg {
+            fill: #010038;
+            width: 39px;
+            align-self: start;
+          }
+          &-details {
+            h1 {
+              color: #010038;
+              font-size: 0.6rem;
+              font-weight: bold;
+            }
+            h2 {
+              color: #010038;
+              font-size: 1.8rem;
+              font-weight: bold;
+              line-height: 2rem;
+            }
+          }
+        }
+      }
     }
     .four {
       background-color: white;
