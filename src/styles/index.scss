@@ -255,33 +255,49 @@ body {
 
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
 
       grid-column: 3 / 5;
       &-header {
-        color: white;
-        font-size: 1.6rem;
-        font-weight: 700;
-        background-color: #441bff;
-        border-radius: 25px;
-        padding: 5px 25px;
-        margin: 5px 0px;
-        width: max-content;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        h1 {
+          color: white;
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+          font-weight: 700;
+          background-color: #5145ff;
+          border-radius: 25px;
+          padding: 4px 30px;
+          margin: 5px 0px;
+          width: max-content;
+          flex: 0;
+        }
+        div {
+          border: 1px solid rgb(196, 196, 196);
+          height: 1px;
+          flex: 1;
+          width: 100%;
+          margin-right: 15px;
+        }
       }
       .grid {
-      height: calc(100% - 40px);
-      width: 100%;
-      display: grid;
-      align-content: center;
-      grid-template-columns: 1fr 1fr;
-      row-gap: 25px;
+        height: calc(100% - 40px);
+        width: 100%;
+        display: grid;
+        align-content: center;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 25px;
         .feels-like {
           display: flex;
 
           gap: 3px;
           svg {
             fill: #010038;
-            width: 35px;
+            width: 25px;
             align-self: start;
           }
           &-details {
@@ -292,7 +308,7 @@ body {
             }
             h2 {
               color: #010038;
-              font-size: 1.8rem;
+              font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
             }
@@ -303,7 +319,7 @@ body {
           gap: 3px;
           svg {
             fill: #010038;
-            width: 39px;
+            width: 29px;
             align-self: start;
           }
           &-details {
@@ -314,7 +330,7 @@ body {
             }
             h2 {
               color: #010038;
-              font-size: 1.8rem;
+              font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
             }
@@ -325,7 +341,7 @@ body {
           gap: 3px;
           svg {
             fill: #010038;
-            width: 39px;
+            width: 29px;
             align-self: start;
           }
           &-details {
@@ -336,7 +352,7 @@ body {
             }
             h2 {
               color: #010038;
-              font-size: 1.8rem;
+              font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
             }
@@ -347,7 +363,7 @@ body {
           gap: 3px;
           svg {
             fill: #010038;
-            width: 39px;
+            width: 29px;
             align-self: start;
           }
           &-details {
@@ -358,7 +374,7 @@ body {
             }
             h2 {
               color: #010038;
-              font-size: 1.8rem;
+              font-size: 2rem;
               font-weight: bold;
               line-height: 2rem;
             }
@@ -367,8 +383,9 @@ body {
       }
     }
     .four {
-      background-color: white;
+      background-color: #5145ff;
       grid-column: 2 / 5;
+      
     }
   }
 }
