@@ -103,7 +103,7 @@ body {
     display: grid;
     grid-auto-flow: rows;
     grid-template-columns: 2fr 1.5fr 1fr 1fr;
-    grid-template-rows: 1fr 1.2fr;
+    grid-template-rows: 1.2fr 1fr;
     gap: 30px;
     section {
       height: 100%;
@@ -194,54 +194,68 @@ body {
       }
     }
     .two {
-      background-color: white;
+      background-color: rgb(255, 255, 255);
       
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 15px;
 
-      grid-column: 2 / 5;
-      .weather-today {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        img {
-          width: 60px;
-          justify-self: end;
-          align-self: center;
-        }
+      grid-column: 2 / 3;
+      .calendar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
         &-split-one {
-          margin: 20px;
+          padding: 4px 11px 16px 11px;
+          border-radius: 15px;
+          background-color: #010038;
           h1 {
-            font-size: 0.8rem;
-            font-weight: bold;
+            color: white;
+            font-size: 2.9rem;
+            font-weight: 700;
+
           }
           h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 2rem;
+          }
+        }
+        &-split-two {
+          // background-color: #010038;
+          border-radius: 100px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            stroke: #010038;
           }
         }
       }
-      .high-low-today {
-        display: flex;
-        gap: 30px;
-        p {
-          font-size: 0.8rem;
-          font-weight: bold;
-          padding: 4px 10px;
-          background: rgb(237, 255, 77);
-          border-radius: 25px;
-          border: 2px solid black;
+      .clock-container {
+        background-color: rgb(255, 102, 102);
+        border-radius: 15px;
+        padding: 0px 9px;
+        h1 {
+          color: #010038;
+          font-size: 4rem;
+          font-weight: 700;
         }
       }
     }
     .three {
       background-color: white;
+      grid-column: 3 / 5;
 
     }
     .four {
       background-color: white;
-      grid-column: 3 / 5;
+      grid-column: 2 / 5;
     }
   }
 }
