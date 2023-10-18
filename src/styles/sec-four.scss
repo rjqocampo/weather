@@ -1,0 +1,81 @@
+.four {
+  background-color: white;
+
+  position: relative;
+
+  grid-column: 2 / 5;
+  .button-container {
+    margin: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    h1 {
+      color: rgb(68, 68, 68);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+    button {
+      padding: 5px 15px;
+      background-color: white;
+      border: 3px solid var(--main-theme);
+      border-radius: 3px;
+      color: black;
+      font-weight: bold;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    div {
+      border: 1px solid rgb(153, 153, 153);
+      border-radius: 25px;
+      height: 1px;
+      flex: 1;
+      width: 100%;
+      margin-right: 15px;
+    }
+  }
+  ul {
+    height: calc(100% - 100px);
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    li {
+      padding: 20px 15px;
+      list-style: none;
+      color: white;
+      background-color: var(--secondary-theme);
+      border-radius: 5px;
+      h1 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      h3 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        font-style: italic;
+        line-height: 0.5rem;
+        margin-bottom : 13px;
+      }
+      img {
+        width: 55px;
+        filter: invert(1);
+      }
+    }
+  }
+  #heart {
+    width: 240px;
+    transform: rotate(-4deg);
+
+    position: absolute;
+    bottom: -33px;
+    right: -10px;
+  }
+}

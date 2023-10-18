@@ -1,0 +1,55 @@
+.two {
+  background-color: rgb(255, 255, 255);
+  padding: 16px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  grid-column: 2 / 3;
+  .calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    &-split-one {
+      padding: 4px 28px 16px 28px;
+      border-radius: 15px;
+      background-color: var(--main-theme);
+      h1 {
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 700;
+
+      }
+      h2 {
+        color: white;
+        font-size: 2.1rem;
+        font-weight: 700;
+        line-height: 2rem;
+      }
+    }
+    &-split-two {
+      border-radius: 100px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        stroke: black;
+      }
+    }
+  }
+  .clock-container {
+    background-color: var(--secondary-theme);
+    border-radius: 15px;
+    padding: 0px 20px;
+    h1 {
+      color: white;
+      font-size: 3.4rem;
+      font-weight: 700;
+    }
+  }
+}

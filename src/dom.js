@@ -1,4 +1,5 @@
 import { parseDay } from "./utility";
+import { getData } from "./api";
 
 function showTime() {
   const date = new Date();
@@ -9,7 +10,7 @@ function showTime() {
 
   h1.textContent = `${h}:${m}`;
 
-  setTimeout(showTime, 1000);
+  setTimeout(showTime, 60000);
 }
 
 function showDate() {
