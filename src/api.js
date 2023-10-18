@@ -1,3 +1,5 @@
+import { clearInput } from "./dom";
+
 let data = null;
 let temperatureUnit = true;
 

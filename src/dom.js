@@ -89,12 +89,20 @@ function switchTemperatureUnit() {
   updateTemperatuteValues();
 }
 
+function clearInput() {
+  const input = document.querySelector("input[type=search]");
+  console.log(input);
+  input.value = "";
+}
+
 async function search() {
   const input = getInput();
   await fetchData(input);
   const data = getData();
 
   populateSectionOne(data, getTemperatureUnit());
+
+  clearInput();
 }
 
 buttonSearch.addEventListener("click", search);
