@@ -14,6 +14,7 @@ import {
   toggleTemperatureUnit,
   getStartIndexForecast,
   navigateForecast,
+  resetStartIndexForecast,
 } from "./api";
 
 const buttonSearch = document.querySelector(".search__button");
@@ -114,7 +115,6 @@ function populateSectionFour(startIndexForecast) {
   } else {
     for (let i = startIndexForecast; i < startIndexForecast + 3; i++) {
       createHourlyForecast(i);
-      console.log(i);
     }
   }
 }
@@ -154,8 +154,6 @@ function createHourlyForecast(index) {
   const data = getData();
   const temperatureUnit = getTemperatureUnit();
 
-  console.log(data.forecast.forecastday[0].hour[index].time);
-
   const ul = document.querySelector("ul");
   const li = document.createElement("li");
   const h1 = document.createElement("h1");
@@ -183,7 +181,6 @@ function createHourlyForecast(index) {
   li.appendChild(h3);
   li.appendChild(img);
   ul.appendChild(li);
-  console.log(`${h}`);
 }
 
 function getInput() {
@@ -213,30 +210,6 @@ function updateTemperatuteValues() {
   populateSectionFour(getStartIndexForecast());
 }
 
-function switchTemperatureUnit() {
-  const textTemperatureUnit = document.getElementById("text-temperature-unit");
-  toggleTemperatureUnit();
-
-  textTemperatureUnit.textContent = getTemperatureUnit()
-    ? "DISPLAY °F"
-    : "DISPLAY °C";
-
-  updateTemperatuteValues();
-}
-
-async function search() {
-  const input = getInput();
-  await fetchData(input);
-  // const data = getData();
-
-  populateSectionOne();
-  populateSectionThree();
-  populateDate();
-  populateTime();
-
-  clearInput();
-}
-
 function showActiveForecastType() {
   const forecastType = getForecastType();
 
@@ -260,7 +233,81 @@ function showNavigationButtons() {
   }
 }
 
-function navigateLeft() {
+function handleError() {
+  const responseOne = document.querySelector(".response-one");
+  const responseTwo = document.querySelector(".response-two");
+
+  responseOne.textContent = "Location not found.";
+  responseTwo.textContent =
+    'Try searching for "Countries", "Cities", or "States".';
+}
+
+function validateInput(input) {
+  const responseOne = document.querySelector(".response-one");
+  const responseTwo = document.querySelector(".response-two");
+
+  if (!input) {
+    responseOne.textContent = "Oops!";
+    responseTwo.textContent = "Please specify a location to search.";
+    return false;
+  }
+  return true;
+}
+
+function clearValidationResponse() {
+  const responseOne = document.querySelector(".response-one");
+  const responseTwo = document.querySelector(".response-two");
+
+  responseOne.textContent = "";
+  responseTwo.textContent = "";
+}
+
+async function runSearch() {
+  const input = getInput();
+
+  if (!validateInput(input)) {
+    return;
+  }
+
+  if (await fetchData(input)) {
+    resetStartIndexForecast();
+    populateSectionOne();
+    populateSectionThree();
+    populateSectionFour(getStartIndexForecast());
+    populateDate();
+    populateTime();
+
+    clearInput();
+    clearValidationResponse();
+  }
+}
+
+function runSwitchTemperatureUnit() {
+  const textTemperatureUnit = document.getElementById("text-temperature-unit");
+  toggleTemperatureUnit();
+
+  textTemperatureUnit.textContent = getTemperatureUnit()
+    ? "DISPLAY °F"
+    : "DISPLAY °C";
+
+  updateTemperatuteValues();
+}
+
+function runForecastHourly() {
+  toggleForecastType(false);
+  showActiveForecastType();
+  showNavigationButtons();
+  populateSectionFour(getStartIndexForecast());
+}
+
+function runForecastDaily() {
+  toggleForecastType(true);
+  showActiveForecastType();
+  showNavigationButtons();
+  populateSectionFour();
+}
+
+function runNavigateLeft() {
   if (getStartIndexForecast() === 0) {
     return;
   }
@@ -269,7 +316,7 @@ function navigateLeft() {
   populateSectionFour(getStartIndexForecast());
 }
 
-function navigateRight() {
+function runNavigateRight() {
   if (getStartIndexForecast() === 21) {
     return;
   }
@@ -278,22 +325,12 @@ function navigateRight() {
   populateSectionFour(getStartIndexForecast());
 }
 
-buttonSearch.addEventListener("click", search);
-buttonTemperatureUnit.addEventListener("click", switchTemperatureUnit);
-buttonHourly.addEventListener("click", () => {
-  toggleForecastType(false);
-  showActiveForecastType();
-  showNavigationButtons();
-  populateSectionFour(getStartIndexForecast());
-});
-buttonDaily.addEventListener("click", () => {
-  toggleForecastType(true);
-  showActiveForecastType();
-  showNavigationButtons();
-  populateSectionFour();
-});
-buttonPrev.addEventListener("click", navigateLeft);
-buttonNext.addEventListener("click", navigateRight);
+buttonSearch.addEventListener("click", runSearch);
+buttonTemperatureUnit.addEventListener("click", runSwitchTemperatureUnit);
+buttonHourly.addEventListener("click", runForecastHourly);
+buttonDaily.addEventListener("click", runForecastDaily);
+buttonPrev.addEventListener("click", runNavigateLeft);
+buttonNext.addEventListener("click", runNavigateRight);
 
 showNavigationButtons(); // FOR TESTING
 
@@ -305,4 +342,5 @@ export {
   populateTime,
   createDailyForecast,
   showActiveForecastType,
+  handleError,
 };

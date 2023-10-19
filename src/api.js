@@ -1,3 +1,5 @@
+import { handleError } from "./dom";
+
 let data = null;
 let temperatureUnit = true;
 let forecastType = false;
@@ -12,15 +14,20 @@ async function fetchData(city) {
     const responseData = await response.json();
 
     if (response.status !== 200) {
-      console.log("RESPONSE: ", response);
-      console.log("DATA: ", responseData);
       throw new Error(responseData.error.message);
     }
+
     console.log(responseData);
+
     data = responseData;
+
+    return true;
   } catch (error) {
-    window.alert(error);
     console.error(error);
+
+    handleError();
+
+    return false;
   }
 }
 
@@ -61,6 +68,10 @@ function navigateForecast(input) {
   }
 }
 
+function resetStartIndexForecast() {
+  startIndexForecast = 0;
+}
+
 export {
   fetchData,
   getData,
@@ -69,5 +80,6 @@ export {
   getForecastType,
   toggleForecastType,
   getStartIndexForecast,
+  resetStartIndexForecast,
   navigateForecast,
 };
