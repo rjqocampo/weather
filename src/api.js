@@ -2,6 +2,7 @@ import { clearInput } from "./dom";
 
 let data = null;
 let temperatureUnit = true;
+let forecastType = true;
 
 async function fetchData(city) {
   try {
@@ -32,9 +33,28 @@ function getTemperatureUnit() {
   return temperatureUnit;
 }
 
-function toggleTemperatureUnit() {
-  temperatureUnit = !temperatureUnit;
-  console.log(temperatureUnit);
+function getForecastType() {
+  return forecastType;
 }
 
-export { fetchData, getData, getTemperatureUnit, toggleTemperatureUnit };
+function toggleTemperatureUnit() {
+  temperatureUnit = !temperatureUnit;
+}
+
+function toggleForecastType(input) {
+  if (input) {
+    forecastType = true;
+  } else {
+    forecastType = false;
+  }
+  console.log(forecastType);
+}
+
+export {
+  fetchData,
+  getData,
+  getTemperatureUnit,
+  toggleTemperatureUnit,
+  getForecastType,
+  toggleForecastType,
+};

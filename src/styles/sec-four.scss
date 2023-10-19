@@ -16,23 +16,64 @@
       font-weight: 800;
       letter-spacing: 3px;
     }
-    button {
-      padding: 5px 15px;
-      background-color: white;
-      border: 3px solid var(--main-theme);
-      border-radius: 3px;
-      color: black;
-      font-weight: bold;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-    div {
+    #horizontal-line {
       border: 1px solid rgb(153, 153, 153);
       border-radius: 25px;
       height: 1px;
       flex: 1;
       width: 100%;
       margin-right: 15px;
+    }
+    .nav-buttons {
+      margin-right: 10px;
+      
+      display: none;
+      gap: 10px;
+
+      &.on {
+        display: flex;
+      }
+      button {
+
+        border: none;
+        border-radius: 55px;
+        align-items: center;
+        padding: 0;
+
+        display: flex;
+        svg {
+          height: 30px;
+          width: 30px;
+          stroke: var(--main-theme);
+
+          transition: all 0.2s;
+          &:hover {
+            transform: scale(115%);
+          }
+          &:active {
+            transform: scale(95%);
+          }
+        }
+      }
+    }
+    .forecast-buttons {
+      button {
+        width:70px;
+        padding: 5px 0px;
+        background-color: white;
+        border: 3px solid var(--main-theme);
+        border-radius: 3px;
+        color: black;
+        font-weight: bold;
+        font-size: 0.9rem;
+        cursor: pointer;
+
+        transition: all 0.2s;
+        &.on {
+          color: white;
+          background-color: var(--main-theme);
+        }
+      }
     }
   }
   ul {

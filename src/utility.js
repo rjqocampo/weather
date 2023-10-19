@@ -4,7 +4,7 @@ const weatherCodes = [
   { code: 1006, source: "cloudy.svg" },
   { code: 1009, source: "cloudy.svg" },
   { code: 1030, source: "cloud-fog.svg" },
-  { code: 1063, source: "cloud-drizzle.svg" },
+  { code: 1063, source: "cloud-rain-wind.svg" },
   { code: 1066, source: "snowflake.svg" },
   { code: 1069, source: "cloud-drizzle.svg" },
   { code: 1072, source: "cloud-drizzle.svg" },
@@ -58,21 +58,21 @@ function getWeatherIcon(code) {
 function formatDay(day) {
   switch (day) {
     case 1:
-      return "MONDAY";
+      return "Mon";
     case 2:
-      return "TUESDAY";
+      return "Tue";
     case 3:
-      return "WEDNESDAY";
+      return "Wed";
     case 4:
-      return "THURSDAY";
+      return "Thu";
     case 5:
-      return "FRIDAY";
+      return "Fri";
     case 6:
-      return "SATURDAY";
+      return "Sat";
     case 7:
-      return "SUNDAY";
+      return "Sun";
     default:
-      return "DAY";
+      return "Day";
   }
 }
 

@@ -6,9 +6,11 @@ import "./styles/sec-three.scss";
 import "./styles/sec-four.scss";
 import {
   populateDate,
+  populateSectionFour,
   populateSectionOne,
   populateSectionThree,
   populateTime,
+  showActiveForecastType,
 } from "./dom";
 import { fetchData, getTemperatureUnit } from "./api";
 
@@ -19,6 +21,8 @@ async function initializeApp() {
   populateSectionThree(getTemperatureUnit());
   populateDate();
   populateTime();
+  populateSectionFour();
+  showActiveForecastType();
 }
 
 initializeApp();
