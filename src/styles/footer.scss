@@ -1,0 +1,27 @@
+.github {
+  margin-bottom: 20px;
+  a {
+    font-weight: 500;
+    font-size: 0.65rem;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 20px 120px;
+    align-items: center;
+    gap: 20px;
+    svg {
+      padding: 0;
+      fill: white;
+      height: 25px;
+      width: 25px;
+    }
+    &:hover p {
+      display: none;
+    }
+    &:hover:after {
+      content: "Click to see code";
+    }
+  }
+}
