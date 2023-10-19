@@ -5,7 +5,7 @@
 
   grid-column: 2 / 5;
   .button-container {
-    margin: 20px 30px;
+    margin: 20px 30px 0px 30px;
 
     display: flex;
     align-items: center;
@@ -34,11 +34,11 @@
         display: flex;
       }
       button {
-
         border: none;
         border-radius: 55px;
         align-items: center;
         padding: 0;
+        cursor: pointer;
 
         display: flex;
         svg {
@@ -68,6 +68,9 @@
         font-size: 0.9rem;
         cursor: pointer;
 
+        position: relative;
+        z-index: 1;
+
         transition: all 0.2s;
         &.on {
           color: white;
@@ -77,25 +80,32 @@
     }
   }
   ul {
-    height: calc(100% - 100px);
     padding: 15px;
 
     display: flex;
     align-items: center;
     gap: 15px;
     li {
-      padding: 20px 15px;
+      width: 100px;
+      padding: 20px 5px 14px 5px;
       list-style: none;
       color: white;
       background-color: var(--secondary-theme);
-      border-radius: 5px;
+      border-radius: 10px;
+
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 700;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
       }
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         font-weight: 700;
       }
       h3 {
@@ -106,17 +116,18 @@
         margin-bottom : 13px;
       }
       img {
-        width: 55px;
+        width: 50px;
         filter: invert(1);
       }
     }
   }
   #heart {
-    width: 220px;
+    width: 255px;
     transform: rotate(-4deg);
 
     position: absolute;
-    bottom: -33px;
+    bottom: -32px;
     right: -10px;
+    z-index: 0;
   }
 }
