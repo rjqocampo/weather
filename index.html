@@ -136,12 +136,25 @@
       <section class="four">
         <div class="button-container">
           <h1>FORECAST</h1>
-          <div></div>
-          <button type="button">Daily</button>
-          <button type="button">Hourly</button>
+          <div id="horizontal-line">
+
+          </div>
+          <div class="nav-buttons">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-circle"><circle cx="12" cy="12" r="10"/><path d="m14 16-4-4 4-4"/></svg>
+            </button>
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-circle"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+            </button>
+          </div>
+          <div class="forecast-buttons">
+            <button id="button-hourly" type="button">Hourly</button>
+            <button id="button-daily" type="button" class="on">Daily</button>
+          </div>
+
         </div>
         <ul>
-          <li>
+          <!-- <li>
             <h1>Monday</h1>
             <h2>144 °F</h2>
             <h3>32 °C</h3>
@@ -158,7 +171,7 @@
             <h2>144 °F</h2>
             <h3>32 °C</h3>
             <img src="/assets/cloudy.svg" alt="">
-          </li>
+          </li> -->
         </ul>
         <img id="heart" src="/assets/heart1.svg" alt="">
       </section>
