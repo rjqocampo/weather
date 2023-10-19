@@ -13,6 +13,7 @@ import {
   toggleForecastType,
   toggleTemperatureUnit,
   getStartIndexForecast,
+  navigateForecast,
 } from "./api";
 
 const buttonSearch = document.querySelector(".search__button");
@@ -21,6 +22,8 @@ const buttonTemperatureUnit = document.getElementById(
 );
 const buttonDaily = document.getElementById("button-daily");
 const buttonHourly = document.getElementById("button-hourly");
+const buttonPrev = document.getElementById("button-prev");
+const buttonNext = document.getElementById("button-next");
 
 function populateSectionOne() {
   const data = getData();
@@ -111,6 +114,7 @@ function populateSectionFour(startIndexForecast) {
   } else {
     for (let i = startIndexForecast; i < startIndexForecast + 3; i++) {
       createHourlyForecast(i);
+      console.log(i);
     }
   }
 }
@@ -223,7 +227,7 @@ function switchTemperatureUnit() {
 async function search() {
   const input = getInput();
   await fetchData(input);
-  const data = getData();
+  // const data = getData();
 
   populateSectionOne();
   populateSectionThree();
@@ -256,6 +260,24 @@ function showNavigationButtons() {
   }
 }
 
+function navigateLeft() {
+  if (getStartIndexForecast() === 0) {
+    return;
+  }
+
+  navigateForecast(false);
+  populateSectionFour(getStartIndexForecast());
+}
+
+function navigateRight() {
+  if (getStartIndexForecast() === 21) {
+    return;
+  }
+
+  navigateForecast(true);
+  populateSectionFour(getStartIndexForecast());
+}
+
 buttonSearch.addEventListener("click", search);
 buttonTemperatureUnit.addEventListener("click", switchTemperatureUnit);
 buttonHourly.addEventListener("click", () => {
@@ -270,6 +292,8 @@ buttonDaily.addEventListener("click", () => {
   showNavigationButtons();
   populateSectionFour();
 });
+buttonPrev.addEventListener("click", navigateLeft);
+buttonNext.addEventListener("click", navigateRight);
 
 showNavigationButtons(); // FOR TESTING
 

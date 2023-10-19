@@ -1,7 +1,7 @@
 let data = null;
 let temperatureUnit = true;
 let forecastType = false;
-const startIndexForecast = 0;
+let startIndexForecast = 0;
 
 async function fetchData(city) {
   try {
@@ -53,6 +53,14 @@ function getStartIndexForecast() {
   return startIndexForecast;
 }
 
+function navigateForecast(input) {
+  if (input === true) {
+    startIndexForecast += 3;
+  } else if (input === false) {
+    startIndexForecast -= 3;
+  }
+}
+
 export {
   fetchData,
   getData,
@@ -61,4 +69,5 @@ export {
   getForecastType,
   toggleForecastType,
   getStartIndexForecast,
+  navigateForecast,
 };
