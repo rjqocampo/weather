@@ -12,7 +12,7 @@ import {
   populateTime,
   showActiveForecastType,
 } from "./dom";
-import { fetchData, getTemperatureUnit } from "./api";
+import { fetchData, getStartIndexForecast, getTemperatureUnit } from "./api";
 
 async function initializeApp() {
   await fetchData("Manila");
@@ -21,7 +21,7 @@ async function initializeApp() {
   populateSectionThree(getTemperatureUnit());
   populateDate();
   populateTime();
-  populateSectionFour();
+  populateSectionFour(getStartIndexForecast());
   showActiveForecastType();
 }
 

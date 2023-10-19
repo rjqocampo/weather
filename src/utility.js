@@ -119,4 +119,12 @@ function formatTime(date) {
   return strTime;
 }
 
-export { formatDay, formatTime, formatMonth, getWeatherIcon };
+function formatHour(date) {
+  let hours = date.getHours();
+  const ampm = hours >= 12 ? "PM" : "AM";
+  hours %= 12;
+  hours = hours || 12;
+  return `${hours}:00 ${ampm}`;
+}
+
+export { formatDay, formatTime, formatHour, formatMonth, getWeatherIcon };

@@ -1,8 +1,7 @@
-import { clearInput } from "./dom";
-
 let data = null;
 let temperatureUnit = true;
-let forecastType = true;
+let forecastType = false;
+const startIndexForecast = 0;
 
 async function fetchData(city) {
   try {
@@ -50,6 +49,10 @@ function toggleForecastType(input) {
   console.log(forecastType);
 }
 
+function getStartIndexForecast() {
+  return startIndexForecast;
+}
+
 export {
   fetchData,
   getData,
@@ -57,4 +60,5 @@ export {
   toggleTemperatureUnit,
   getForecastType,
   toggleForecastType,
+  getStartIndexForecast,
 };

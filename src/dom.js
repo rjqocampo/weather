@@ -1,4 +1,10 @@
-import { getWeatherIcon, formatDay, formatTime, formatMonth } from "./utility";
+import {
+  getWeatherIcon,
+  formatDay,
+  formatTime,
+  formatMonth,
+  formatHour,
+} from "./utility";
 import {
   fetchData,
   getData,
@@ -6,6 +12,7 @@ import {
   getTemperatureUnit,
   toggleForecastType,
   toggleTemperatureUnit,
+  getStartIndexForecast,
 } from "./api";
 
 const buttonSearch = document.querySelector(".search__button");
@@ -89,12 +96,11 @@ function populateSectionThree() {
   windSpeed.textContent = `${data.current.wind_kph}km/h`;
 }
 
-function populateSectionFour() {
+function populateSectionFour(startIndexForecast) {
   const data = getData();
   const forecastType = getForecastType();
 
   const arrayOfDaily = data.forecast.forecastday;
-  const arrayOfHourly = data.forecast.forecastday[0].hour;
 
   clearForecast();
 
@@ -102,8 +108,11 @@ function populateSectionFour() {
     arrayOfDaily.forEach((item, index) => {
       createDailyForecast(index);
     });
+  } else {
+    for (let i = startIndexForecast; i < startIndexForecast + 3; i++) {
+      createHourlyForecast(i);
+    }
   }
-  console.log(arrayOfHourly);
 }
 
 function createDailyForecast(index) {
@@ -137,6 +146,42 @@ function createDailyForecast(index) {
   ul.appendChild(li);
 }
 
+function createHourlyForecast(index) {
+  const data = getData();
+  const temperatureUnit = getTemperatureUnit();
+
+  console.log(data.forecast.forecastday[0].hour[index].time);
+
+  const ul = document.querySelector("ul");
+  const li = document.createElement("li");
+  const h1 = document.createElement("h1");
+  const h2 = document.createElement("h2");
+  const h3 = document.createElement("h3");
+  const img = document.createElement("img");
+
+  const date = new Date(data.forecast.forecastday[0].hour[index].time);
+  const h = formatHour(date);
+
+  h1.textContent = h;
+
+  h2.textContent = temperatureUnit
+    ? `${data.forecast.forecastday[0].hour[index].temp_c} °C`
+    : `${data.forecast.forecastday[0].hour[index].temp_f} °F`;
+  h3.textContent = !temperatureUnit
+    ? `${data.forecast.forecastday[0].hour[index].temp_c} °C`
+    : `${data.forecast.forecastday[0].hour[index].temp_f} °F`;
+  img.src = `assets/${getWeatherIcon(
+    data.forecast.forecastday[0].hour[index].condition.code,
+  )}`;
+
+  li.appendChild(h1);
+  li.appendChild(h2);
+  li.appendChild(h3);
+  li.appendChild(img);
+  ul.appendChild(li);
+  console.log(`${h}`);
+}
+
 function getInput() {
   const input = document.querySelector("input[type=search]");
 
@@ -161,6 +206,7 @@ function updateTemperatuteValues() {
   populateSectionOne();
   populateSectionThree();
   populateSectionFour();
+  populateSectionFour(getStartIndexForecast());
 }
 
 function switchTemperatureUnit() {
@@ -212,16 +258,20 @@ function showNavigationButtons() {
 
 buttonSearch.addEventListener("click", search);
 buttonTemperatureUnit.addEventListener("click", switchTemperatureUnit);
-buttonDaily.addEventListener("click", () => {
-  toggleForecastType(true);
-  showActiveForecastType();
-  showNavigationButtons();
-});
 buttonHourly.addEventListener("click", () => {
   toggleForecastType(false);
   showActiveForecastType();
   showNavigationButtons();
+  populateSectionFour(getStartIndexForecast());
 });
+buttonDaily.addEventListener("click", () => {
+  toggleForecastType(true);
+  showActiveForecastType();
+  showNavigationButtons();
+  populateSectionFour();
+});
+
+showNavigationButtons(); // FOR TESTING
 
 export {
   populateSectionOne,
