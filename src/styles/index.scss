@@ -46,6 +46,7 @@ body {
   --main-theme: #6b61f0;
   --secondary-theme: #fc6666;
   --orange-theme: #FF9F31;
+  --font-theme: rgb(255, 255, 255);
 
   min-height: 100vh;
   background-image: url(../assets/bg.svg);
@@ -65,7 +66,7 @@ body {
 
     display: grid;
     grid-auto-flow: rows;
-    grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 2fr 0.4fr;
     grid-template-rows: 1.2fr 1fr;
     gap: 30px;
     section {

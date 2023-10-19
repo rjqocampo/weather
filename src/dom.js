@@ -1,4 +1,4 @@
-import { getWeatherIcon, parseDay } from "./utility";
+import { getWeatherIcon, formatDay, formatTime, formatMonth } from "./utility";
 import {
   fetchData,
   getData,
@@ -11,7 +11,8 @@ const buttonTemperatureUnit = document.getElementById(
   "button-temperature-unit",
 );
 
-function populateSectionOne(data, temperatureUnit) {
+function populateSectionOne(temperatureUnit) {
+  const data = getData();
   const mainTemperature = document.getElementById("one__main-temperature");
   const locationName = document.getElementById("one__location-name");
   const weatherCondition = document.getElementById("one__weather-condition");
@@ -20,7 +21,6 @@ function populateSectionOne(data, temperatureUnit) {
   const background = document.querySelector(".day-night-bg");
   const weatherIcon = document.getElementById("one__weather-icon");
 
-  console.log(data.current.condition.code);
   mainTemperature.textContent = temperatureUnit
     ? `${data.current.temp_c} °C`
     : `${data.current.temp_f} °F`;
@@ -39,8 +39,47 @@ function populateSectionOne(data, temperatureUnit) {
 
   background.src = data.current.is_day ? "assets/day.png" : "assets/night.png";
 
-  console.log(getWeatherIcon(data.current.condition.code));
   weatherIcon.src = `assets/${getWeatherIcon(data.current.condition.code)}`;
+}
+
+function populateDate() {
+  const data = getData();
+  const date = new Date(data.location.localtime);
+  const y = date.getFullYear();
+  const m = formatMonth(date.getMonth());
+  const d = date.getDate();
+
+  const h1 = document.getElementById("month-date");
+
+  h1.textContent = `${m} ${d} ${y}`;
+}
+
+function populateTime() {
+  const data = getData();
+  const local = data.location.localtime;
+  const date = new Date(local);
+  const formatted = formatTime(date);
+
+  const h1 = document.getElementById("clock");
+
+  h1.textContent = `${formatted}`;
+}
+
+function populateSectionThree(temperatureUnit) {
+  const data = getData();
+
+  const feelsLike = document.getElementById("feels-like-value");
+  const humidity = document.getElementById("humidity-value");
+  const chanceOfRain = document.getElementById("chance-of-rain-value");
+  const windSpeed = document.getElementById("wind-speed-value");
+
+  feelsLike.textContent = temperatureUnit
+    ? `${data.current.feelslike_c} °C`
+    : `${data.current.feelslike_f} °F`;
+
+  humidity.textContent = `${data.current.humidity}%`;
+  chanceOfRain.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
+  windSpeed.textContent = `${data.current.wind_kph}km/h`;
 }
 
 function getInput() {
@@ -49,40 +88,18 @@ function getInput() {
   return input.value;
 }
 
-function showTime() {
-  const date = new Date();
-  const h = date.getHours();
-  const m = date.getMinutes();
-
-  const h1 = document.getElementById("clock");
-
-  h1.textContent = `${h}:${m}`;
-
-  setTimeout(showTime, 60000);
-}
-
-function showDate() {
-  const date = new Date();
-  const dayOfMonth = date.getDate();
-  const dayOfWeek = date.getDay();
-
-  const h1 = document.getElementById("day-date");
-  const h2 = document.getElementById("day-week");
-
-  h1.textContent = parseDay(date.getDay());
-  h2.textContent = dayOfMonth;
-}
-
 function updateTemperatuteValues() {
   const data = getData();
 
-  populateSectionOne(data, getTemperatureUnit());
+  populateSectionOne(getTemperatureUnit());
+  populateSectionThree(getTemperatureUnit());
 }
 
 function switchTemperatureUnit() {
+  const textTemperatureUnit = document.getElementById("text-temperature-unit");
   toggleTemperatureUnit();
 
-  buttonTemperatureUnit.textContent = getTemperatureUnit()
+  textTemperatureUnit.textContent = getTemperatureUnit()
     ? "DISPLAY °F"
     : "DISPLAY °C";
 
@@ -91,7 +108,7 @@ function switchTemperatureUnit() {
 
 function clearInput() {
   const input = document.querySelector("input[type=search]");
-  console.log(input);
+
   input.value = "";
 }
 
@@ -101,6 +118,9 @@ async function search() {
   const data = getData();
 
   populateSectionOne(data, getTemperatureUnit());
+  populateSectionThree(getTemperatureUnit());
+  populateDate();
+  populateTime();
 
   clearInput();
 }
@@ -108,7 +128,7 @@ async function search() {
 buttonSearch.addEventListener("click", search);
 buttonTemperatureUnit.addEventListener("click", switchTemperatureUnit);
 
-showTime();
-showDate();
+// showTime();
+// showDate();
 
-export { populateSectionOne };
+export { populateSectionOne, populateSectionThree, populateDate, populateTime };

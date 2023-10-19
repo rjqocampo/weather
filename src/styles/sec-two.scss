@@ -1,55 +1,53 @@
 .two {
-  background-color: rgb(255, 255, 255);
-  padding: 16px;
-  
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
   gap: 15px;
+  padding: 25px 0px;
 
-  grid-column: 2 / 3;
-  .calendar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    &-split-one {
-      padding: 4px 28px 16px 28px;
-      border-radius: 15px;
-      background-color: var(--main-theme);
-      h1 {
-        color: white;
-        font-size: 2.2rem;
-        font-weight: 700;
-
-      }
-      h2 {
-        color: white;
-        font-size: 2.1rem;
-        font-weight: 700;
-        line-height: 2rem;
-      }
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  &__split-one {
+    p {
+      color: var(--font-theme);
+      font-size: 0.65rem;
+      font-weight: 800;
+      border-radius: 25px;
+      margin-bottom: 12px;
     }
-    &-split-two {
-      border-radius: 100px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      svg {
-        stroke: black;
-      }
+    #month-date{
+      color: var(--font-theme);;
+      font-size: 0.65rem;
+      font-weight: 800;
+      line-height: 0.75rem;
+    }
+    #clock {
+      color: var(--font-theme);;
+      font-size: 0.65rem;
+      font-weight: 800;
+      line-height: 0.65rem;
     }
   }
-  .clock-container {
-    background-color: var(--secondary-theme);
-    border-radius: 15px;
-    padding: 0px 20px;
-    h1 {
-      color: white;
-      font-size: 3.4rem;
-      font-weight: 700;
+  &__split-two {
+    display: flex;
+    gap: 5px;
+    .circle-one {
+      height: 6px;
+      width: 6px;
+      border-radius: 25px;
+      background-color: rgb(84, 164, 255);
+    }
+    .circle-two {
+      height: 6px;
+      width: 6px;
+      border-radius: 25px;
+      background-color: rgb(119, 88, 255);
+    }
+    .circle-three {
+      height: 6px;
+      width: 6px;
+      border-radius: 25px;
+      background-color: rgb(169, 94, 255);
     }
   }
 }
