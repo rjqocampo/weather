@@ -97,7 +97,7 @@ function populateSectionThree() {
 
   humidity.textContent = `${data.current.humidity}%`;
   chanceOfRain.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
-  windSpeed.textContent = `${data.current.wind_kph}km/h`;
+  windSpeed.textContent = `${data.current.wind_kph} km/h`;
 }
 
 function populateSectionFour(startIndexForecast) {
