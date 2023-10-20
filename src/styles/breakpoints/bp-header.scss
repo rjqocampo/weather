@@ -42,6 +42,46 @@
   }
 }
  
-@media all and (min-width: 480px) and (max-width: 768px) { }
+@media all and (min-width: 480px) and (max-width: 768px) {
+  header {
+    padding: 0px 50px;
+    .header-container {
+      .search {
+        div {
+          &:hover > input {
+          }
+          &:hover > button {
+          }
+          input {
+            &::placeholder {
+            }
+            &:focus {
+            }
+            &:focus ~ button {
+            }
+          }
+          button {
+            &:hover {
+            }
+            &:active {
+            }
+            svg {
+            }
+          }
+        }
+        .search-icon {
+        }
+      }
+      .title {
+        h1 {
+        }
+        svg {
+        }
+      }
+    }
+    .validation {
+    }
+  }
+}
  
 @media all and (max-width: 480px) { }

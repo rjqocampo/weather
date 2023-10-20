@@ -2,6 +2,7 @@
  
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .one {
+    height: 100%;
     grid-row: 1 / 3;
     .image-container {
       height: 55%;
@@ -45,6 +46,50 @@
   }
 }
  
-@media all and (min-width: 480px) and (max-width: 768px) { }
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .one {
+    height: 100%;
+    grid-row: 1 / 3;
+    .image-container {
+      height: 55%;
+      h1 {
+      }
+      button {
+        p {
+        }
+      }
+      .day-night-bg {
+      }
+    }
+    .primary-info {
+      height: 45%;
+
+      &-split-one {
+        div {
+          h1 {
+          }
+          h2 {
+          }
+        }
+        img {
+          justify-self: start;
+          align-self: start;
+        }
+      }
+      &-split-two {
+        .container-extra-info {
+          p {
+            span {
+            }
+          }
+        }
+        .container-title {
+          h3 {
+          }
+        }
+      }
+    }
+  }
+}
  
 @media all and (max-width: 480px) { }

@@ -54,7 +54,53 @@
   }  
 }
  
-@media all and (min-width: 480px) and (max-width: 768px) { }
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .four {
+    grid-column: 1 / 3;
+    .button-container {
+      justify-content: space-between;
+      h1 {
+      }
+      #horizontal-line {
+      }
+      .nav-buttons {
+        &.on {
+          button {
+            svg {
+            }
+          }
+        }
+        button {
+          svg {
+          }
+        }
+      }
+      .forecast-buttons {
+        button {
+        }
+        &.on {
+          button {
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        h1 {
+        }
+        h2 {
+        }
+        h3 {
+        }
+        img {
+        }
+      }
+    }
+    #heart {
+      width: clamp(100px, 25vw + 50px, 255px);
+    }
+  }  
+}
  
 @media all and (max-width: 480px) { }
 

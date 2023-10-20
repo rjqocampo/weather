@@ -59,6 +59,62 @@
   
 }
  
-@media all and (min-width: 480px) and (max-width: 768px) { }
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .three {
+    &-header {
+      h1 {
+      }
+      div {
+      }
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      .feels-like {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+              
+          }
+        }
+      }
+      .humidity {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+              
+          }
+        }
+      }
+      .chance-of-rain {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+            
+          }
+        }
+      }
+      .wind-speed {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+
+          }
+        }
+      }
+    }
+  }
+}
  
 @media all and (max-width: 480px) { }
