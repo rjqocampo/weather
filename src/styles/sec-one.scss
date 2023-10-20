@@ -33,7 +33,6 @@
         color: rgb(31, 31, 31);
         font-size: 0.7rem;
         transform: translateY(1px);
-
       }
       &:hover {
         padding: 4px 22px;
@@ -111,6 +110,7 @@
         h3 {
           font-size: 0.75rem;
           background: white;
+          font-weight: bold;
           padding: 1px 10px;
           border-radius: 25px;
           color: var(--main-theme);
