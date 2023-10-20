@@ -38,9 +38,7 @@ font-size: 100%;
 body {
   // font-family: 'Montserrat', sans-serif;
   font-family: 'Nunito Sans', sans-serif;
-  // font-family: 'Oswald', sans-serif;
   // font-family: 'Poppins', sans-serif;
-  // font-family: 'Raleway', sans-serif;
   // font-family: 'Lato', sans-serif;
 
   --main-theme: #6b61f0;
@@ -54,20 +52,15 @@ body {
   background-size: cover;
   background-position: bottom center ;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
-  align-items: center;
-
   main {
-    padding: 10px 50px 50px 50px;
-    height: 600px;
-    width: 1000px; // fixed size
+    height: 550px;
+    width: 900px;
 
     display: grid;
-    grid-auto-flow: rows;
     grid-template-columns: 1.5fr 2fr 0.4fr;
-    grid-template-rows: 1fr 1.1fr;
+    grid-template-rows: 1fr 1.2fr;
     gap: 30px;
     section {
       height: 100%;

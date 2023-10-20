@@ -1,0 +1,60 @@
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .four {
+    grid-column: 2 / 4;
+    .button-container {
+      justify-content: space-between;
+      h1 {
+        display: none;
+
+      }
+      #horizontal-line {
+        order: 2
+      }
+      .nav-buttons {
+        order: 3;
+        &.on {
+          button {
+            svg {
+            }
+          }
+        }
+        button {
+          svg {
+          }
+        }
+      }
+      .forecast-buttons {
+        order: 1;
+        button {
+        }
+        &.on {
+          button {
+          }
+        }
+      }
+    }
+    ul {
+      justify-content: center;
+      li {
+        h1 {
+        }
+        h2 {
+        }
+        h3 {
+        }
+        img {
+        }
+      }
+    }
+    #heart {
+      visibility: hidden;
+    }
+  }  
+}
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { }
+ 
+@media all and (max-width: 480px) { }
+

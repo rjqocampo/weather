@@ -1,0 +1,47 @@
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    padding: 0px 50px;
+    .header-container {
+      .search {
+        div {
+          &:hover > input {
+          }
+          &:hover > button {
+          }
+          input {
+            &::placeholder {
+            }
+            &:focus {
+            }
+            &:focus ~ button {
+            }
+          }
+          button {
+            &:hover {
+            }
+            &:active {
+            }
+            svg {
+            }
+          }
+        }
+        .search-icon {
+        }
+      }
+      .title {
+        h1 {
+        }
+        svg {
+        }
+      }
+    }
+    .validation {
+    }
+  }
+}
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { }
+ 
+@media all and (max-width: 480px) { }

@@ -1,6 +1,10 @@
 header {
-  height: 64px;
-  width: 800px;
+  margin-top: 30px;
+  width: min(100%, 800px);
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
   .header-container {
     display: flex;
     justify-content: space-between;
