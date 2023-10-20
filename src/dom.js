@@ -282,6 +282,16 @@ async function runSearch() {
   }
 }
 
+function fetchingOn() {
+  const icon = document.getElementById("title-icon");
+  icon.classList.add("animate");
+}
+
+function fetchingOff() {
+  const icon = document.getElementById("title-icon");
+  icon.classList.remove("animate");
+}
+
 function runSwitchTemperatureUnit() {
   const textTemperatureUnit = document.getElementById("text-temperature-unit");
   toggleTemperatureUnit();
@@ -348,4 +358,6 @@ export {
   createDailyForecast,
   showActiveForecastType,
   handleError,
+  fetchingOn,
+  fetchingOff,
 };

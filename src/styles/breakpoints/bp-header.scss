@@ -14,11 +14,33 @@
  
 @media all and (max-width: 480px) {
   header {
-    padding: 0px 20px;
+  height: 90px;
+  margin-top: 20px;
     .header-container {
+      padding: 0px 20px;
+
+      flex-direction: column;
+      align-items: start;
+      gap: 5px;
+      .search {
+        margin-left: 10px;
+        order: 2;
+      }
       .title {
-        display: none;
+        order: 1;
+        h1 {
+          order: 2;
+        }
+        svg {
+          order: 1;
+        }
       }
     }
+    .validation {
+      margin-left: 30px;
+      display: flex;
+      gap: 4px;
+    }
   }
+  
 }

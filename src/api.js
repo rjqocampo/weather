@@ -1,4 +1,4 @@
-import { handleError } from "./dom";
+import { fetchingOff, fetchingOn, handleError } from "./dom";
 
 let data = null;
 let temperatureUnit = true;
@@ -7,11 +7,13 @@ let startIndexForecast = 0;
 
 async function fetchData(city) {
   try {
+    fetchingOn();
     const response = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=968026c727974d82b99102459230710&q=${city}&days=3`,
       { mode: "cors" },
     );
     const responseData = await response.json();
+    fetchingOff();
 
     if (response.status !== 200) {
       throw new Error(responseData.error.message);
