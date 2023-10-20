@@ -39,7 +39,7 @@ Link to live project: https://rjqocampo.github.io/weather/ :point_left:
 * Difficulties of making own design and layout especially if aiming for mobile responsiveness
 
 ### Known Issues
-* Total dependency on WeatherAPI
+* Possible downtime due to total dependency on 3rd Party API
 
 Found a bug or issue in the project? [Click here](https://github.com/rjqocampo/weather#contributions).
 
@@ -85,7 +85,7 @@ Plan your days ahead with the forecast. You can check the 3-Day forecast or the 
 Set the preferred temperature scale. You can toggle using Fahrenheit or Celsius.
 
 ### Mobile Responsive
-User friendly AI that's easy to use and compatible with various screen devices. 
+User friendly UI that's easy to use and compatible with various screen devices. 
 
 # Usage
 To use the application, simply enter a location inside the search bar. Under the Forecast section, click the 'Hourly' or 'Daily' button to show the corresponding forecast. 
