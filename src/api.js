@@ -2,7 +2,7 @@ import { handleError } from "./dom";
 
 let data = null;
 let temperatureUnit = true;
-let forecastType = false;
+let forecastType = true;
 let startIndexForecast = 0;
 
 async function fetchData(city) {

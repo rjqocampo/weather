@@ -325,12 +325,19 @@ function runNavigateRight() {
   populateSectionFour(getStartIndexForecast());
 }
 
+function runSearchByEnter(e) {
+  if (e.key === "Enter") {
+    runSearch();
+  }
+}
+
 buttonSearch.addEventListener("click", runSearch);
 buttonTemperatureUnit.addEventListener("click", runSwitchTemperatureUnit);
 buttonHourly.addEventListener("click", runForecastHourly);
 buttonDaily.addEventListener("click", runForecastDaily);
 buttonPrev.addEventListener("click", runNavigateLeft);
 buttonNext.addEventListener("click", runNavigateRight);
+document.addEventListener("keypress", runSearchByEnter);
 
 showNavigationButtons(); // FOR TESTING
 

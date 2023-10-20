@@ -63,7 +63,6 @@
     }
     .primary-info {
       height: 45%;
-
       &-split-one {
         div {
           h1 {
@@ -71,6 +70,7 @@
             line-height: 1.2rem;
           }
           h2 {
+            font-size: 0.9rem;
           }
         }
         img {
@@ -96,7 +96,7 @@
  
 @media all and (max-width: 480px) {
   .one {
-    height: 400px;
+    height: 450px;
     grid-column: 1 / 2;
     .image-container {
       height: 55%;
@@ -122,7 +122,6 @@
           }
           h2 {
             font-size: 0.9rem;
-
           }
         }
         img {

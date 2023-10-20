@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Nunito';
+  src:  url('../assets/fonts/Regular.ttf') format('truetype'),
+}
+
 /* --- CSS Reset --- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -36,10 +41,7 @@ font-size: 100%;
 /* --- Custom CSS --- */
 
 body {
-  // font-family: 'Montserrat', sans-serif;
-  font-family: 'Nunito Sans', sans-serif;
-  // font-family: 'Poppins', sans-serif;
-  // font-family: 'Lato', sans-serif;
+  font-family: 'Nunito', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   --main-theme: #6b61f0;
   --secondary-theme: #fc6666;
