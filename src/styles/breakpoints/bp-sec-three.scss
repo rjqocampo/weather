@@ -117,4 +117,63 @@
   }
 }
  
-@media all and (max-width: 480px) { }
+@media all and (max-width: 480px) {
+  .three {
+    grid-column: 1 / 2;
+    margin-bottom: 15px;
+
+    &-header {
+      h1 {
+      }
+      div {
+      }
+    }
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      .feels-like {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+              
+          }
+        }
+      }
+      .humidity {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+              
+          }
+        }
+      }
+      .chance-of-rain {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+            
+          }
+        }
+      }
+      .wind-speed {
+        svg {
+        }
+        &-details {
+          h1 {
+          }
+          h2 {
+
+          }
+        }
+      }
+    }
+  }
+}

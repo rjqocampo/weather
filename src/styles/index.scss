@@ -52,11 +52,11 @@ body {
   background-size: cover;
   background-position: bottom center ;
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  grid-template-rows: 0.3fr max-content 0.1fr;
   main {
-    // height: min(100%, 550px);
     width: 900px;
 
     display: grid;

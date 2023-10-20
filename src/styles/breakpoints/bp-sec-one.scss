@@ -67,6 +67,8 @@
       &-split-one {
         div {
           h1 {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
           }
           h2 {
           }
@@ -92,4 +94,54 @@
   }
 }
  
-@media all and (max-width: 480px) { }
+@media all and (max-width: 480px) {
+  .one {
+    height: 400px;
+    grid-column: 1 / 2;
+    .image-container {
+      height: 55%;
+      h1 {
+      }
+      button {
+        p {
+        }
+      }
+      .day-night-bg {
+        object-position: top -40px right 0px;
+      }
+    }
+    .primary-info {
+      height: 45%;
+
+      &-split-one {
+        grid-template-columns: 3fr 1fr;
+        div {
+          h1 {
+            font-size: 1.1rem;
+            line-height: 1.1rem;
+          }
+          h2 {
+            font-size: 0.9rem;
+
+          }
+        }
+        img {
+          justify-self: start;
+          align-self: start;
+        }
+      }
+      &-split-two {
+        .container-extra-info {
+          p {
+            span {
+            }
+          }
+        }
+        .container-title {
+          h3 {
+          }
+        }
+      }
+    }
+  }
+}

@@ -102,5 +102,65 @@
   }  
 }
  
-@media all and (max-width: 480px) { }
+@media all and (max-width: 480px) {
+  .four {
+    grid-column: 1 / 2;
+    .button-container {
+      justify-content: space-between;
+      h1 {
+        display: none;
+
+      }
+      #horizontal-line {
+        order: 2
+      }
+      .nav-buttons {
+        order: 3;
+        &.on {
+          button {
+            svg {
+            }
+          }
+        }
+        button {
+          svg {
+          }
+        }
+      }
+      .forecast-buttons {
+        order: 1;
+        button {
+        }
+        &.on {
+          button {
+          }
+        }
+      }
+    }
+    ul {
+      justify-content: center;
+      li {
+        height: 160px;
+        width: 90px;
+        h1 {
+          font-size: 0.9rem;
+        }
+        h2 {
+          font-size: 1rem;
+        }
+        h3 {
+          font-size: 0.7rem;
+
+        }
+        img {
+        width: 45px;
+
+        }
+      }
+    }
+    #heart {
+      visibility: hidden;
+    }
+  }  
+}
 

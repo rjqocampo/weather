@@ -48,4 +48,27 @@
   }
 }
  
-@media all and (max-width: 480px) { }
+@media all and (max-width: 480px) {
+  .two {
+    display: none;
+    padding: 25px 0px 0px 0px;
+    grid-column: 1 / 2;
+    
+    &__split-one {
+      p {
+      }
+      #month-date {
+      }
+      #clock {
+      }
+    }
+    &__split-two {
+      .circle-one {
+      }
+      .circle-two {
+      }
+      .circle-three {
+      }
+    }
+  }
+}
