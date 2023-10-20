@@ -339,8 +339,6 @@ buttonPrev.addEventListener("click", runNavigateLeft);
 buttonNext.addEventListener("click", runNavigateRight);
 document.addEventListener("keypress", runSearchByEnter);
 
-showNavigationButtons(); // FOR TESTING
-
 export {
   populateSectionOne,
   populateSectionThree,

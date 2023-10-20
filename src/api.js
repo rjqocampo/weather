@@ -53,7 +53,6 @@ function toggleForecastType(input) {
   } else {
     forecastType = false;
   }
-  console.log(forecastType);
 }
 
 function getStartIndexForecast() {

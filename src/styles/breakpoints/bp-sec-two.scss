@@ -4,23 +4,6 @@
   .two {
     padding: 25px 0px 0px 0px;
     grid-column: 3 / 4;
-    
-    &__split-one {
-      p {
-      }
-      #month-date {
-      }
-      #clock {
-      }
-    }
-    &__split-two {
-      .circle-one {
-      }
-      .circle-two {
-      }
-      .circle-three {
-      }
-    }
   }
 }
  
@@ -28,23 +11,6 @@
   .two {
     padding: 25px 0px 0px 0px;
     grid-column: 2 / 3;
-    
-    &__split-one {
-      p {
-      }
-      #month-date {
-      }
-      #clock {
-      }
-    }
-    &__split-two {
-      .circle-one {
-      }
-      .circle-two {
-      }
-      .circle-three {
-      }
-    }
   }
 }
  
@@ -53,22 +19,5 @@
     display: none;
     padding: 25px 0px 0px 0px;
     grid-column: 1 / 2;
-    
-    &__split-one {
-      p {
-      }
-      #month-date {
-      }
-      #clock {
-      }
-    }
-    &__split-two {
-      .circle-one {
-      }
-      .circle-two {
-      }
-      .circle-three {
-      }
-    }
   }
 }
