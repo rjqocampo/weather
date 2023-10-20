@@ -2,7 +2,7 @@
 
 Welcome to Sinag!
 
-Sinag is a weather application for staying updated on weather conditions. It aims to provide reliable and detailed forecast to help you plan your day. It is built with HTML, CSS, Javascript and the WeatherAPI.
+Sinag is a simple weather application for staying updated on weather conditions. It aims to provide reliable and detailed forecast to help you plan your day. It is built with HTML, CSS, Javascript and the WeatherAPI.
 
 Link to live project: https://rjqocampo.github.io/weather/ :point_left:
 
@@ -39,12 +39,12 @@ Link to live project: https://rjqocampo.github.io/weather/ :point_left:
 * Difficulties of making own design and layout especially if aiming for mobile responsiveness
 
 ### Known Issues
-* Possible downtime due to total dependency on 3rd Party API
+* Possible downtime due to dependency on 3rd Party API
 
 Found a bug or issue in the project? [Click here](https://github.com/rjqocampo/weather#contributions).
 
 ### Prospective Updates
-* Better display of information and overall design
+* Option for a more detailed view on the weather forecast
 
 Looking to contribute ideas or features to the project? [Click here](https://github.com/rjqocampo/weather#contributions).
 
