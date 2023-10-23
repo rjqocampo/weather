@@ -238,8 +238,7 @@ function handleError() {
   const responseTwo = document.querySelector(".response-two");
 
   responseOne.textContent = "Location not found.";
-  responseTwo.textContent =
-    'Try searching for "Countries", "Cities", or "States".';
+  responseTwo.textContent = 'Try searching for "Cities" or "States".';
 }
 
 function validateInput(input) {
